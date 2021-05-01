@@ -1,0 +1,518 @@
+@media screen {
+  /* --- Reset Styles --- */
+  * {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    height: 100%;
+    width: 100%;
+  }
+
+  side bar
+  #     <div class="sidebar">
+#       <h3>Environment</h3>
+#       <ul>
+#         <li><b>Ruby:</b> <%= RUBY_VERSION %></li>
+#         <li><b>Environment:</b> <%= ENV["RACK_ENV"] %></li>
+#         <li><b>Server:</b> <%= @env["SERVER_SOFTWARE"] %></li>
+#         <li><b>Port:</b> <%= @env["SERVER_PORT"] %></li>
+#       </ul>
+#     </div>
+
+#   </div>
+# </div>
+
+crystal gems
+# <h1> Healing Crystals </h1>
+# <% @movies.each do |c| %>
+#    <%= c.title %>
+# <% end %>
+
+main.css folder
+
+@media screen {
+  /* --- Reset Styles --- */
+  * {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body {
+    height: 100%;
+    width: 100%;
+  }
+
+  /* --- Welcome Page Styles --- */
+  body {
+    background-color: lightgoldenrodyellow;
+    color: #333;
+    font-family: Catellar;
+    line-height: 18px;
+  }
+
+  .wrapper {
+    background: #fff;
+    -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    margin: 16px auto;
+    max-width: 960px;
+    padding: 2.25%; /* 18px / 800px */
+    width: 85%;
+  }
+
+  h1 {
+    font-size: 36px;
+    line-height: 54px;
+  }
+
+  h2 {
+    border-bottom: 2px solid #ccc;
+    font-size: 24px;
+    line-height: 36px;
+    margin-bottom: 16px;
+  }
+
+  h3 {
+    font-size: 18px;
+    line-height: 36px;
+  }
+
+  p {
+    margin-bottom: 18px;
+  }
+
+  .main {
+    overflow: hidden;
+  }
+
+  .content {
+    float: left;
+    width: 60%; /* 480px / 800px */
+  }
+
+  .sidebar {
+    background: #eee;
+    border: 1px solid #ccc;
+    float: right;
+    padding: 2.08333333333%; /* 5px / 240px */
+    width: 30%; /* 240px / 800px */
+  }
+
+  .sidebar ul {
+    font-size: 14px;
+  }
+
+  .branding {
+    clear: both;
+  }
+
+  footer.branding {
+    border-top: 2px solid #ccc;
+    margin-top: 20px;
+    padding-top: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .wrapper {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    width: auto;
+  }
+
+  .content, .sidebar {
+    float: none;
+    width: 100%;
+  }
+
+  .sidebar {
+    background: transparent;
+    border: none;
+    border-top: 2px solid #ccc;
+    padding: 0;
+  }
+
+  h1 {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  h2 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+
+/* Bordered form */
+form {
+  border: 3px solid #f1f1f1;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Add a hover effect for buttons */
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra style for the cancel button (red) */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the avatar image inside this container */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
+/* Avatar image */
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+/* The "Forgot password" text */
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+    display: block;
+    float: none;
+  }
+  .cancelbtn {
+    width: 100%;
+  }
+}
+
+
+
+LOG IN PAGE?
+# <form action="action_page.php" method="post">
+#   <div class="imgcontainer">
+#     <img src="img_avatar2.png" alt="Avatar" class="avatar">
+#   </div>
+
+#   <div class="container">
+#     <label for="uname"><b>Username</b></label>
+#     <input type="text" placeholder="Enter Username" name="uname" required>
+
+#     <label for="psw"><b>Password</b></label>
+#     <input type="password" placeholder="Enter Password" name="psw" required>
+
+#     <button type="submit">Login</button>
+#     <label>
+#       <input type="checkbox" checked="checked" name="remember"> Remember me
+#     </label>
+#   </div>
+
+#   <div class="container" style="background-color:#f1f1f1">
+#     <button type="button" class="cancelbtn">Cancel</button>
+#     <span class="psw">Forgot <a href="#">password?</a></span>
+#   </div>
+# </form>
+
+# <div class="container">
+# <form action="/login" method='POST'>
+# Enter Your Username: <input type='text' name='username'><br>
+# <label for="password">Set Password:</label> <input type='password' name='password'><br>
+# <input type="submit">
+# </form>
+
+
+index.erb
+<% @healing_crystals.each do |obj| %>
+    <p><a href='/crystals/<%= obj.id %>'><%= obj.org_crystals %></a></p>
+        <% end %>
+
+        folder for picture in the head browser - favincon.ico 
+
+        SHOW.ERB
+
+        # <h1>Here is <%= @selected_crystal %> Crystal!</h1>
+# <h5>Want to know more information?</h5>
+
+# <% @crystals.each do |str| %>
+#     <ul><%= str %></ul>
+#         <% end %>
+
+
+# <form action='/crystals/<%= @idx %>' method='delete'>
+#    <input type="submit" value='Delete <%= @selected_crystal %> Close'/>
+# </form>
+
+<div>
+<% def flash_message 
+flash.keys.each do |type| %>
+    <div class="text-center alert alert-warning">
+      <%= flash[type] %>
+      <% end %>
+    </div>
+
+    
+
+
+    USERSCONTROLLER
+get '/login' do
+        if is_logged_in?
+            redirect to '/users/show'
+        else
+        erb :'/users/show'
+    end
+end
+
+    post '/login' do
+        @user = User.find_by(:username => params[:username], :email => params[:email])
+        # if @current_user && @current_user.authenticate(params[:password])
+        if !@user.nil? 
+            session[:user_id] = user.id
+            redirect to '/'
+        else
+            if @user
+                flash[:password] = "Wrong Password. Please Try again"
+                redirect to '/login'
+            else
+                flash[:no_account] = "There is no record with this email address. Please enter a different email or sign up."
+                redirect to '/login'
+            end
+        end
+    end
+
+
+    get '/signup' do 
+        if is_logged_in?
+            redirect to '/users/#{current_user.id}'
+        else 
+            erb :'/users/signup'
+        end
+    end 
+
+    post '/signup' do
+        user = User.new(params)
+    if User.find_by(:username => params[:username])
+        flash[:account_taken] = "The username entered is already taken. Please try again with a new username or log in to continue."
+        redirect to '/users/signup'
+    elsif
+        User.find_by(:email => params[:email])
+        flash[:email_taken] = "The email entered is already taken. Please enter a new email address or log in to continue."
+        redirect to '/users/signup'
+    else
+        if user.save
+            session[:user] = user
+            redirect to '/users/#{@user.id}'
+        else
+            redirect to '/users/signup'
+        end
+     end
+
+
+    #  get '/users/:id' do 
+    #     @user = User.find_by_id(params[:id])
+    #     if is_logged_in? && @user == current_user
+    #         erb ;'/users/'
+  end
+end 
+
+OR 
+
+    get '/signup' do
+	    if logged_in?
+	      redirect to "/users/#{current_user.id}"
+	    else
+	      erb :'/users/create_user'
+	    end
+	  end
+	
+
+	  get '/login' do
+	    if logged_in?
+	      redirect to "/users/#{current_user.id}"
+	    else
+	      erb :'/users/login_user'
+	    end
+	  end
+	
+
+	  post '/login' do
+	    @user = User.find_by(username: params[:username].strip, password: params[:password].strip)
+	    if !@user.nil?
+	     session[:user_id] = @user.id
+	     redirect to '/'
+	    else
+	     redirect to '/login'
+	    end
+	  end
+	
+
+	  post '/signup' do
+	    @user = User.new(username: params[:username].strip, email: params[:email].strip, password: params[:password].strip)
+	    if @user.save
+	      session[:user_id] = @user.id
+	      redirect to "/users/#{@user.id}"
+	    else
+	      redirect to '/signup'
+	    end
+	  end
+	
+
+	  get '/users/:id' do
+	    @user = User.find_by_id(params[:id])
+	    if logged_in? && @user == current_user
+	      erb :'/users/show_user'
+	    else
+	      redirect to '/login'
+	    end
+	  end
+	
+
+	  get '/users/:id/edit' do
+	    @user = User.find_by_id(params[:id])
+	    if logged_in? && @user == current_user
+	      erb :'/users/edit_user'
+	    else
+	      redirect to '/login'
+	    end
+	  end
+	
+
+	  patch '/users/:id' do
+	    @user = User.find_by_id(params[:id])
+	    @user.username = params[:username].strip
+	    @user.email = params[:email].strip
+	    @user.password = params[:password].strip
+	    if logged_in? && @user == current_user && @user.valid?
+	      @user.save
+	      redirect to "/users/#{@user.id}"
+	    else
+	      redirect to '/login'
+	    end
+	  end
+	
+
+	  get '/logout' do
+	   if logged_in?
+	     session.clear
+	     redirect to '/'
+	   else
+	     redirect to '/'
+	   end
+	 end
+	
+
+	 delete '/users/:id' do
+	    @user = User.find_by_id(params[:id])
+	    if logged_in? && @user == current_user
+	      @user.concerts.each do |concert|
+	        concert.delete
+	      end
+	      @user.artists.each do |artist|
+	        artist.delete
+	      end
+	      @user.delete
+	      session.clear
+	      redirect to '/'
+	    else
+	      redirect to '/login'
+	    end
+	 end
+	
+
+	end
+
+
+# (username: params[:username])
+# (:username => user[:username])
+
+# get '/login' do 
+#     if !is_logged_in?
+#         redirect "/login"
+#     else
+#         @user = current_user
+#         erb :"/users/show"
+#     end
+#   end
+# end 
+
+
+
+#     get '/login' do
+#         if is_logged_in?
+#             redirect to '/users/show'
+#         else
+#         erb :'/users/show'
+#     end
+# end
+
+#     post '/login' do
+#         @user = User.find_by(:username => params[:username], :email => params[:email])
+#         # if @current_user && @current_user.authenticate(params[:password])
+#         if !@user.nil? 
+#             session[:user_id] = user.id
+#             redirect to '/'
+#         else
+#             if @user
+#                 flash[:password] = "Wrong Password. Please Try again"
+#                 redirect to '/login'
+#             else
+#                 flash[:no_account] = "There is no record with this email address. Please enter a different email or sign up."
+#                 redirect to '/login'
+#             end
+#         end
+#     end
+
+
+#   get '/users/signup'
+#       @user = User.all 
+#     erb '/users/show'
+# end
+  # get '/users' do
+  #   erb :'users/new'
+  # end
+
+  # get '/crystals' do
+  #   erb :'crystals/new'
+  # end
+  # get '/sessions/logout' do
+  #   erb :'sessions/logout' 
+  # end
+
+  # get '/sessions/login' do
+  #   erb :'sessions/login' 
+  # end

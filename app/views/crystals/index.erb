@@ -1,0 +1,11 @@
+<h3> Find your healing crystals! </h3>
+
+<div class="content">
+<p>Choose a crystal:</p>
+<% @crystals.each do |obj| %>
+    <p><a href='/crystals/<%= obj.id %>'><%= obj.name %></a></p>
+<% end %>
+<p>For more knowledge, click here <a href="https://steven-universe.fandom.com/wiki/Crystal_Gems">Crystal Wiki</a>.</p>
+</div>
+</div>
+
