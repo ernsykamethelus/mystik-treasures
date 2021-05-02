@@ -1,7 +1,7 @@
-org_crystals = ['Jasper', 'Obsidian', 'Citrine', 'Turquoise', 
+crystals = ['Jasper', 'Obsidian', 'Citrine', 'Turquoise', 
 'Moonstone', 'Bloodstone', 'Sapphire', 'Ruby', 'Amethyst', 'Tigers Eye']
 
-crystals = ['empowering', 'protective', 'optimism', 'grounding', 'growth', 
+purpose = ['empowering', 'protective', 'optimism', 'grounding', 'growth', 
     'strenghten', 'prosperity', 'vitality', 'purifying', 'harmonizing']
 
     # org_crystals.each {|name| User.create(org_crystal: name)}
