@@ -7,27 +7,24 @@ class CrystalCrontroller < ApplicationController
     erb :'/crystals/index'
   end
   
-  get '/crystals/new' do #create pt 1 route. referred to as 'new'
+  get '/crystals/new' do 
     erb :'crystals/new' 
   end
 
-  post '/crystals' do #create pt 2 route
-    #always check params with forms
-  if params[:stone] == ''
-    erb :'crystal/new' 
+  post '/crystals' do 
+    @crystals = current_user.jokes.new(name: params[:name],purpose: params[:purpose])
+    if @crystals.save
+    redirect :'/crystals' 
   else
-    ORG_CRYSTALS << params[:stone]
-    #redirect to show route
-    redirect "/crystals/#{ORG_CRYSTALS.index(params[:stone])}"
+    erb :"/crystals/new"
   end
 end
 
   get '/crystals/:id' do #show route
-    @selected_crystal = Org_Crystals(params[:id]).to_i
-    @idx = params[:id].to_i
-    @crystals = ['empowering', 'protective', 'optimism', 'grounding', 'growth', 
-    'strenghten', 'prosperity', 'vitality', 'purifying', 'harmonizing'].sample(5)
-
+    # @selected_crystal = Org_Crystals(params[:id]).to_i
+    # @idx = params[:id].to_i
+    # @crystals = ['empowering', 'protective', 'optimism', 'grounding', 'growth', 
+    # 'strenghten', 'prosperity', 'vitality', 'purifying', 'harmonizing'].sample(5)
     erb :'crystal/show'
  end
 
