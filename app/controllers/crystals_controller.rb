@@ -30,14 +30,14 @@ end
 
 
 get "/crystals/:id" do
-   erb :"/crystals/index"
+   erb :"/crystals/show"
 end
 
 get "/crystals/:id/edit" do
   erb :"/crystals/edit"
 end
 
-patch "/jokes/:id" do
+patch "/crystals/:id" do
   if @crystal.update(name: params[:name],purpose: params[:purpose])
     redirect "/crystals/#{@crystal.id}"
   else 
@@ -46,7 +46,7 @@ patch "/jokes/:id" do
 end
 
 delete "/crystals/:id/delete" do
-  @joke.destroy
+  @crystal.destroy
   redirect "/crystals"
 end
 

@@ -1,0 +1,16 @@
+<h4><b>Name of Crystal: <%= @crystal.name %></b></h4>
+<br>
+ <p><%= @crystal.purpose %></p> 
+ <i>Created by: <a href="/users/<%= @joke.user.id%>"> <%= @crystal.user.username %> </a> </i> 
+
+
+<div>
+  <br/>
+    <a href="/crystals/<%= @crystal.id %>/edit"><button>Edit</button></a> | 
+    <form method="post" action="/jokes/<%=@crystal.id%>/delete" style="display: inline-block;">
+      <input type="hidden" name="_method" value="delete" />
+      <input type="submit" value="Delete" />
+    </form>
+  </div>
+
+<% end %>

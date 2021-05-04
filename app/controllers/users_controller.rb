@@ -8,7 +8,7 @@ class UserController < ApplicationController
         user = User.new(params)
         if user.save 
             session[:id] = user.id
-            redirect "/users/#{user.id}"
+            redirect "/users/#{session[:id]}"
         else
             redirect '/users/new'
         end
@@ -23,6 +23,10 @@ class UserController < ApplicationController
         else
             redirect "/crystals"
         end
+    end
+
+    get "/users" do
+        erb :"/users/show"
     end
 end
 

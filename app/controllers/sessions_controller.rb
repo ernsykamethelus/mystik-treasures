@@ -5,13 +5,12 @@ class SessionsController < ApplicationController
     end
 
     post '/login' do 
-        binding.pry
-        chosen_user = User.find_by(:username => params[:username])
-        if chosen_user && chosen_user.authenticate(params[:password])
-            session[:id] = chosen_user.id 
-            erb :'/users/show'
+        @user = User.find_by(:username => params[:username])
+        if @user && @user.authenticate(params[:password])
+            session[:id] = @user.id 
+            redirect :"/users/#{session[:id]}"
         else 
-            erb :'/login'
+            redirect :'/login'
         end
     end
 
