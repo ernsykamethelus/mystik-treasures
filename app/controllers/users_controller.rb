@@ -1,11 +1,11 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
    
     get '/users/new' do 
         erb :'/users/new'
     end
 
     post '/users' do
-        user = User.new(params)
+        user = User.new(params[:user])
         if user.save 
             session[:id] = user.id
             redirect "/users/#{session[:id]}"
@@ -24,11 +24,12 @@ class UserController < ApplicationController
             redirect "/crystals"
         end
     end
-
-    get "/users" do
-        erb :"/users/show"
-    end
 end
+
+#     get "/users" do
+#         erb :"/users/show"
+#     end
+# end
 
 
 

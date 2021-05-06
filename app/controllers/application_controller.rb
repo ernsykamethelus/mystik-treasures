@@ -20,7 +20,7 @@ helpers do
   end
 
   def current_user 
-     User.find_by_id(session[:id])
+     user = User.find_by_id(session[:id])
     end
   end
 end

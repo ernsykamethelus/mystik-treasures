@@ -5,12 +5,12 @@ class SessionsController < ApplicationController
     end
 
     post '/login' do 
-        @current_user = User.find_by(:username => params[:username])
-        if @current_user && @current_user.authenticate(params[:password])
-            session[:id] = @current_user.id 
-            erb :"/users/show"
+        @user = User.find_by(:username => params[:username])
+        if @user && @user.authenticate(params[:password])
+            session[:id] = @user.id 
+            redirect "/users/show"
         else 
-            redirect :'/login'
+            redirect '/login'
         end
     end
 
