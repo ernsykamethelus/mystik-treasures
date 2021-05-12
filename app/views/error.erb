@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="col-md-8 col-md-offset-2">
+    <br>
+    <h1>Error - Invalid Request for</h1>
+
+    <div class="content">
+      <% if is_logged_in? %>
+            <h5> <a href="/users/<%=session[:user_id]%>"> Back to your profile </a> </h5>
+        <%else%>
+            <h5> <a href="/"> Go back to Mainpage </a> </h5>
+      <%end%>
+  </div>
+</div>

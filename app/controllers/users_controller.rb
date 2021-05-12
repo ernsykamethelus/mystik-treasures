@@ -17,7 +17,7 @@ class UserController < ApplicationController
 
      get '/users/:id' do
         user_not_logged_in
-       @user = User.find_by_id(params[:id])
+       @user = User.find_by_id(params[:user_id])
         if @user.nil? && !is_logged_in?
             redirect '/'
         elsif @user.nil? && is_logged_in?
