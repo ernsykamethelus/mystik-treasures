@@ -7,6 +7,40 @@
       <p>Welcome back to the Mystik Misteries!</p>
     </div>
 
+     <% if is_logged_in? && current_user.id.to_s == params[:id] %>
+    <h1>Hello <%= current_user.username %>! </h1>
+    <p>Here are the crystals you created:</p>
+<%else%>
+    <h3> <b> Crystals added by <%= @user.username %>: </b> </h3>
+<%end%>
+
+<%if @user.crystals.length > 0 %>
+
+    <% @user.crystals.each do |crystal| %>
+    <p> <a href="/crystals/<%=crystal.id%>"><%= crystal.name%>:</a> </p>
+    <p> <%= crystal.purpose%> </p>
+
+    <% if is_logged_in? && current_user.id.to_s == params[:id] %>
+       <!-- <a href="/crystals/<%= crystal.id %>/edit"><button>Edit</button></a>
+        <form method="post" action="/crystals/<%=crystal.id%>/delete" style="display: inline-block;">
+            
+            <input type="hidden" name="_method" value="delete" />
+            <input type="submit" value="Delete" />
+        </form> -->
+    <%end%>
+
+    </p>  
+    <%end%>
+
+    <%else%>
+
+        <p>[There are currently no crystals to show]</p>
+
+    <%end%>
+<hr>
+
+<h5> <a href="/crystals/new"> Create a crystal </a> | <a href="/crystals"> See All Crystals </a></h5>
+
     <div class="sidebar">
       <h3>Environment</h3>
       <ul>

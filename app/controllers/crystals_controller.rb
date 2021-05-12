@@ -1,4 +1,4 @@
-class CrystalsController < ApplicationController
+class CrystalController < ApplicationController
 
   get '/crystals' do #index route
     @crystals = Crystal.all 
@@ -6,6 +6,7 @@ class CrystalsController < ApplicationController
   end
   
   get '/crystals/new' do 
+    @crystal = Crystal.new
     erb :'crystals/new' 
   end
 
@@ -19,10 +20,15 @@ class CrystalsController < ApplicationController
 end
 
 get "/crystals/:id" do
+  @user = current_user
+  @crystal = Crystal.find(params[:id])
+  # if not_able_to_edit
    erb :"/crystals/show"
 end
 
 get "/crystals/:id/edit" do
+  user_not_logged_in
+  @crystal = Crystal.find(params[:id])
   erb :"/crystals/edit"
 end
 
@@ -35,9 +41,19 @@ patch "/crystals/:id" do
 end
 
 delete "/crystals/:id/delete" do
+  not_able_to_edit
   @crystal.destroy
   redirect "/crystals"
-   end
- end
+end
+
+def choose_a_crystal
+  @crystal = Crystal.find_by_id(params[:id])
+end
+
+def not_able_to_edit
+  user_not_logged_in
+    redirect '/crystals'
+  end
+end
 
 

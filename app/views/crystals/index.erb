@@ -1,13 +1,13 @@
-<h3> Find your healing crystals! </h3>
+<h3> Crystals </h3>
 
 <div class="content">
-<p>Choose a crystal:</p>
+
 <% @crystals.each do |crystal| %>
-    <p><a href='/crystals/<%= crystal.id %>'><%= crystal.name %></a> | Created by: <a href="/users/<%=crystal.user.id%>"> <%= crystal.user.username%></a></p>
+    <p><a href='/crystals/<%= crystal.id %>'><%= crystal.name %></a> | Created by: <a href="/users/<%=crystal.user.id%>"> <%= crystal.user.username%> <!--/ <%= crystal.purpose %> / --> </a></p>
 <% end %>
 
 <hr>
-<h5> <a href="/users/<%=session[:id]%>"> Go back to home page </a> | <a href="/crystals/new"> Create a new crystal </a> </h5>
+<h5> <a href="/users/<%=session[:id]%>"> Go back to your home page </a> | <a href="/crystals/new"> Create a new crystal </a> </h5>
 <p>For more knowledge, click here <a href="https://steven-universe.fandom.com/wiki/Crystal_Gems">Crystal Wiki</a>.</p>
 
 </div>

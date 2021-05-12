@@ -1,3 +1,14 @@
+<h1>Edit Crystal.</h1>
+<% if @crystal.errors.any? %>
+    <h2><%= @crystal.errors.count %> error(s) prohibited this joke from being saved:</h2>
+    <ul>
+    <% @crystal.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+<% end %>
+
+
 <div class="form-container">
   <form action="/crystals/<%= @crystal.id %>" method="post">
   

@@ -5,9 +5,3 @@ class User < ActiveRecord::Base
     has_secure_password
     has_many :crystals
 end
-
-      
-    # def delete_obj_and_associated_data
-    #     Crystal.where('user_id = ?', self.id).delete.all 
-    #     self.delete 
-  

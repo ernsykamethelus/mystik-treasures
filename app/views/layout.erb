@@ -16,7 +16,7 @@
   <body>
     <div class="wrapper">
     <% if is_logged_in? %>
-    <a href="/logout"> LOGOUT </a>
+    <h5> <%= current_user.username%>, <a href="/logout">Logout</a>?</h5>
       <% end %>
     
         <%= yield %>

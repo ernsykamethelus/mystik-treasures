@@ -1,16 +1,14 @@
 <h2> Add new Crystal by Filling in the Form</h2>
 
-<form action="/crystals" method='POST'>
- <label>New Crystal</label>
-<input type='text' name='stone'>
-<label>Purpose</label> 
-<input type='text' name='purpose'>
+<div class="form-container">
+<form action="/crystals" method='post'>
+<label>New Crystal</label>
+ <input type='text' name='stone'>
+   <label>Purpose</label> 
+  <input type='text' name='purpose'>
 <button id='submit' type 'submit'>Submit</button><br>
-
- <label for= "content">Meditation Goal</label><br>
-<p><textarea type="text" name="content" cols="45"></textarea><p>
-<button id='submit' type 'submit'>Submit Meditation Goal</button>
-
-
-</form>
+    </form>
+ </div>
 <br>
+
+<h5> <a href="/users/<%=session[:id]%>"> Return to your homepage </a> </h5>
