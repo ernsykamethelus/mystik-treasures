@@ -5,7 +5,7 @@ class UserController < ApplicationController
     end
 
     post '/users' do
-        user = User.new(params[:user])
+        user = User.new(params[:user_id])
         puts user
         if user.save 
             session[:user_id] = user.id

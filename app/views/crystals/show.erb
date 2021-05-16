@@ -2,10 +2,12 @@
 <br>
 <p><%= @crystal.name %></p>
  <p><%= @crystal.purpose %></p> 
- <i>Created by: <a href="/users/<%= @crystal.username.id%>"> <%= @crystal.user.username %> </a> </i> 
+ <i>Created by: <a href="/users/<%= @crystal.user.id%>"> <%= @crystal.user.username %> </a> </i> 
 
 
 <div>
+<% if is_logged_in? && authorize_crystal(@crystal)%>
+  <div>
   <br/>
     <a href="/crystals/<%= @crystal.id %>/edit"><button>Edit</button></a> | 
     <form method="post" action="/jokes/<%=@crystal.id%>/delete" style="display: inline-block;">

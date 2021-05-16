@@ -1,11 +1,11 @@
 <h1>Edit Crystal.</h1>
 <% if @crystal.errors.any? %>
     <h2><%= @crystal.errors.count %> Cannot edit crystal</h2>
-    # <ul>
-    # <% @crystal.errors.full_messages.each do |msg| %>
-    #   <li><%= msg %></li>
-    # <% end %>
-    # </ul>
+    <ul>
+    <% @crystal.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
 <% end %>
 
 
@@ -24,3 +24,5 @@
       <input type="submit" value="Update Joke">
   </form>
 </div>
+
+<h5><a href="/users/session[:user_id]">Or return to Homepage</a></h5>

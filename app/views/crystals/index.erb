@@ -1,7 +1,5 @@
 <h3> Crystals </h3>
 
-<div class="content">
-
 <% @crystals.each do |crystal| %>
     <p><a href='/crystals/<%= crystal.id %>'><%= crystal.name %></a> | Created by: <a href="/users/<%=crystal.user.id%>"> <%= crystal.user.username%> <!--/ <%= crystal.purpose %> / --> </a></p>
 <% end %>
@@ -10,6 +8,5 @@
 <h5> <a href="/users/<%=session[:user_id]%>"> Go back to your home page </a> | <a href="/crystals/new"> Create a new crystal </a> </h5>
 <p>For more knowledge, click here <a href="https://steven-universe.fandom.com/wiki/Crystal_Gems">Crystal Wiki</a>.</p>
 
-</div>
 
 
