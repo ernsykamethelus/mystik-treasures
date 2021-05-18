@@ -8,12 +8,12 @@ class ApplicationController < Sinatra::Base
     enable :sessions 
     # register Sinatra::Flash
     set :method_override, true
-    set :session_secret, "crystal_secret"
+    set :session_secret, "secret"
   end
 
   get "/" do
       if is_logged_in?
-        redirect "/users/#{session[:user_id]}"
+        redirect "/users/#{session[:id]}"
       else
         erb :home
   end
@@ -25,7 +25,7 @@ end
 
 helpers do 
   def current_user 
-    user = User.find_by_id(session[:user_id])
+    user = User.find_by_id(session[:id])
   end
 
   def is_logged_in?

@@ -5,11 +5,11 @@ class UserController < ApplicationController
     end
 
     post '/users' do
-        user = User.new(params[:user_id])
+        user = User.new(params[:user])
         puts user
         if user.save 
-            session[:user_id] = user.id
-            redirect "/users/show"
+            session[:id] = user.id
+            redirect "/users/#{session[:id]}"
         else
             redirect '/users/new'
         end
@@ -17,10 +17,10 @@ class UserController < ApplicationController
 
      get '/users/:id' do
         user_not_logged_in
-       @user = User.find_by_id(params[:user_id])
-        if @user.nil? && !is_logged_in?
+       @user = User.find_by_id(params[:id])
+        if @user.nil? 
             redirect '/'
-        elsif @user.nil? && is_logged_in?
+        else
             redirect "/users/show"
         end
     end
@@ -37,4 +37,7 @@ end
 
 
 
-
+# if @user.nil? && !is_logged_in?
+#     redirect '/'
+# elsif @user.nil? && is_logged_in?
+#     redirect "/users/show"

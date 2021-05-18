@@ -9,6 +9,7 @@ gem 'thin'
 gem 'shotgun'
 gem 'bcrypt'
 gem 'dotenv'
+gem 'faker'
 gem 'sinatra-flash', '~> 0.3.0'
 
 group :development do

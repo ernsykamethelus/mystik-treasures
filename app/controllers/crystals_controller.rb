@@ -9,32 +9,29 @@ class CrystalController < ApplicationController
   get '/crystals/new' do 
     user_not_logged_in
     @crystal = Crystal.new
-    erb :'crystals/new' 
+    erb :"/crystals/new" 
   end
 
   post '/crystals' do 
     user_not_logged_in
-    @crystals = current_user.crystals.new(name: params[:name],purpose: params[:purpose])
-    if @crystals.save
-    redirect '/crystals' 
+    @crystal = current_user.crystals.new(name: params[:name],purpose: params[:purpose])
+    if @crystal.save
+    redirect "/crystals" 
   else
     erb :"/crystals/new"
   end
 end
 
 get "/crystals/:id" do
-  get_crystal
   user_not_logged_in
-  # @user = current_user
-  # @crystal = Crystal.find(params[:id])
-  # if not_able_to_edit
+  get_crystal
    erb :"/crystals/show"
 end
 
 get "/crystals/:id/edit" do
   get_crystal
   user_not_logged_in
-  @crystal = Crystal.find(params[:id])
+  # @crystal = Crystal.find(params[:id])
   erb :"/crystals/edit"
 end
 
@@ -62,15 +59,16 @@ def get_crystal
   end
 end
 
-def choose_a_crystal
-  @crystal = Crystal.find_by_id(params[:id])
-end
+# def choose_a_crystal
+#   @crystal = Crystal.find_by_id(params[:id])
+# end
 
 def not_able_to_edit
   user_not_logged_in
+  if !authorize_crystal(@crystal) 
     redirect '/crystals'
   end
-
+end
 
 def authorize_crystal(crystal)
   # true

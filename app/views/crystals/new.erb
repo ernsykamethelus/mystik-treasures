@@ -9,25 +9,11 @@
 
     <div class="form-group">
       <label for="purpose">Purpose:</label> 
-      <input id="purpose" name="crystal[purpose]" type="textarea" placeholder="For example: It was two tired!" class="form-control" required/>
+      <input id="purpose" name="crystal[purpose]" type="textarea" placeholder="What is my purpose?" class="form-control" required/>
     </div>
-    <% end %>
     <input type="submit" value="Create Crystal" class="btn btn-primary">
   </form>
 </div>
 
 <br>
-<h5> <a href="/users/<%=session[:id]%>"> Cancel and return to your profile </a> </h5>
-
-# <div class="form-container">
-# <form action="/crystals" method='post'>
-# <label>New Crystal</label>
-#  <input type='text' name='stone'>
-#    <label>Purpose</label> 
-#   <input type='text' name='purpose'>
-# <button id='submit' type 'submit'>Submit</button><br>
-#     </form>
-#  </div>
-# <br>
-
-# <h5> <a href="/users/<%=session[:id]%>"> Return to your homepage </a> </h5>
+<h5> <a href="/users/<%=session[:id]%>"> Return to your profile </a> </h5>
