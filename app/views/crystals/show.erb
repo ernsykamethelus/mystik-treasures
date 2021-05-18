@@ -10,7 +10,7 @@
   <div>
   <br/>
     <a href="/crystals/<%= @crystal.id %>/edit"><button>Edit</button></a> | 
-    <form method="post" action="/jokes/<%=@crystal.id%>/delete" style="display: inline-block;">
+    <form method="post" action="/crystals/<%=@crystal.id%>/delete" style="display: inline-block;">
       <input type="hidden" name="_method" value="delete" />
       <input type="submit" value="Delete" />
     </form>

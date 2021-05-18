@@ -7,12 +7,6 @@ require 'faker'
     end
   end
 
-
-# 10.times do 
-#     @user = User.create(name: Faker::Internet.username, email: Faker::Internet.unique.email, password: 'password')
-#     @user.save
-# end
-
     # crystals.each.with_index do |el, i|
     #     name = crystals[i]
     #     purpose = crystals.sample(1)[0]

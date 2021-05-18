@@ -5,7 +5,7 @@
 
     <div class="content">
       <% if is_logged_in? %>
-            <h5> <a href="/users/<%=session[:user_id]%>"> Back to your profile </a> </h5>
+            <h5> <a href="/users/<%=session[:id]%>"> Back to your profile </a> </h5>
         <%else%>
             <h5> <a href="/"> Go back to Mainpage </a> </h5>
       <%end%>
