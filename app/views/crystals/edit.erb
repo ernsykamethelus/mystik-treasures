@@ -1,11 +1,6 @@
 <h1>Edit Crystal.</h1>
 <% if @crystal.errors.any? %>
     <h2><%= @crystal.errors.count %> Cannot edit crystal</h2>
-    <ul>
-    <% @crystal.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
 <% end %>
 
 

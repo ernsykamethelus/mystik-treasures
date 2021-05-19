@@ -516,3 +516,14 @@ OR
   # get '/sessions/login' do
   #   erb :'sessions/login' 
   # end
+
+
+  # def current_user 
+  #   user = User.find_by(session[:id])
+  # end
+
+  
+# if @user.nil? && !is_logged_in?
+#     redirect '/'
+# elsif @user.nil? && is_logged_in?
+#     redirect "/users/show"

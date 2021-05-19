@@ -4,9 +4,9 @@
     <h2>Welcome back to the Mystik Misteries!</h2>
 
      <% if is_logged_in? && current_user.id.to_s == params[:id] %>
-     <h1>Hello <%= current_user.username %>! </h1>
+     <h3>Hello <%= current_user.username %>! </h3>
         <%else%>
-       <h3> <b> Crystals added by <%= @user.username %>: </b> </h3>
+       <h3> <b> Crystals by <%= @user.username %>: </b> </h3> 
      <%end%>
 
         <%if @user.crystals.length > 0 %>
@@ -36,12 +36,12 @@
 <h5> <a href="/crystals/new"> Create a crystal </a> | <a href="/crystals"> See All Crystals </a></h5>
 
     <div class="sidebar">
-      <h3>Environment</h3>
+      <h3>Self-Love Quotes:</h3>
       <ul>
-        <li><b>Ruby:</b> <%= RUBY_VERSION %></li>
-        <li><b>Environment:</b> <%= ENV["RACK_ENV"] %></li>
-        <li><b>Server:</b> <%= @env["SERVER_SOFTWARE"] %></li>
-        <li><b>Port:</b> <%= @env["SERVER_PORT"] %></li>
+        <li><b>“Breathe. Let go. And remind yourself that this very moment is the only one you know you have for sure.” By Oprah Winfrey</li><br>
+        <li><b>"You were born to be real, not to be perfect."</li><br>
+        <li><b>"In order to love who you are, you cannot hate the experiences that shaped you."</li><br>
+        <li><b>"Believe in yourself a little more."</li><br>
       </ul>
     </div>
 

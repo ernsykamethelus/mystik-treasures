@@ -33,11 +33,3 @@ end
 
 
 
-  
-
-
-
-# if @user.nil? && !is_logged_in?
-#     redirect '/'
-# elsif @user.nil? && is_logged_in?
-#     redirect "/users/show"

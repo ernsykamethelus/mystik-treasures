@@ -6,7 +6,6 @@ class ApplicationController < Sinatra::Base
     set :public_folder, 'public'
     set :views, 'app/views'
     enable :sessions 
-    # register Sinatra::Flash
     set :method_override, true
     set :session_secret, "secret"
   end
@@ -30,12 +29,7 @@ helpers do
 
   def is_logged_in?
     !!current_user
-    # !!session[:id]
   end
-
-  # def current_user 
-  #   user = User.find_by(session[:id])
-  # end
 
   def user_not_logged_in
     if !is_logged_in?

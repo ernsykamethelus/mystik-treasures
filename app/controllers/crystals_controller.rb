@@ -1,6 +1,6 @@
 class CrystalController < ApplicationController
 
-  get '/crystals' do #index route
+  get '/crystals' do 
     user_not_logged_in
     @crystals = Crystal.all 
     erb :'/crystals/index'
@@ -31,7 +31,6 @@ end
 get "/crystals/:id/edit" do
   get_crystal
   user_not_logged_in
-  # @crystal = Crystal.find(params[:id])
   erb :"/crystals/edit"
 end
 

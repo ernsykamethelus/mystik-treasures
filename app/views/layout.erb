@@ -13,14 +13,15 @@
 
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
-  <body>
-    <div class="wrapper">
-    <% if is_logged_in? %>
-    <h5> <%= current_user.username%>, <a href="/logout">Logout</a>,</h5> | <h5> <a href="/users/<%=session[:id]%>"> Homepage </a>
-      <% end %>
-    
-        <%= yield %>
+    <body>
+      <div class="wrapper">
+        <% if is_logged_in? %> <br>
+        <h4><a href="/logout">Logout</a></h4> 
+        <br>
+         <h4> <%= current_user.username%>, <a href="/users/<%=session[:id]%>"> Home </a></h4>
+        <% end %>
 
+        <%= yield %>
 
       <footer class="branding">
         <small>&copy; 2021 <strong>MystikTreasures</strong></small>

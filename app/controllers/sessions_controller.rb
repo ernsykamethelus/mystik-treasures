@@ -7,11 +7,10 @@ class SessionsController < ApplicationController
     post "/login" do
         @user = User.find_by(:username => params[:username])
         if @user && @user.authenticate(params[:password])
-            # binding.pry
           session[:id] = @user.id
           redirect "/users/#{session[:id]}"    
         else
-            redirect '/login'   
+            redirect '/error'   
         end
       end
    
