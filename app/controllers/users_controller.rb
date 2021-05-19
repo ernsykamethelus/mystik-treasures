@@ -11,7 +11,7 @@ class UserController < ApplicationController
             session[:id] = user.id
             redirect "/users/#{session[:id]}"
         else
-            redirect '/users/new'
+            erb :'/error'
         end
     end
 

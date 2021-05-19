@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
           session[:id] = @user.id
           redirect "/users/#{session[:id]}"    
         else
-            redirect '/error'   
+            erb :'/error'   
         end
       end
    
