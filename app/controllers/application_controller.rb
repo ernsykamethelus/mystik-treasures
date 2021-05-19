@@ -23,7 +23,7 @@ end
   end
 
   def current_user 
-    user = User.find_by_id(session[:id])
+    User.find_by_id(session[:id])
   end
 
   def is_logged_in?
