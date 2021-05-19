@@ -4,7 +4,7 @@
     <h2>Welcome back to the Mystik Misteries!</h2>
 
      <% if is_logged_in? && current_user.id.to_s == params[:id] %>
-     <h3>Hello <%= current_user.username %>! </h3>
+     <h3>Hello, <%= current_user.username %>! </h3>
         <%else%>
        <h3> <b> Crystals by <%= @user.username %>: </b> </h3> 
      <%end%>
@@ -28,7 +28,7 @@
 
     <%else%>
 
-        <p>[There are currently no crystals to show]</p>
+        <p>No Crystals have been created or to be shown</p>
 
     <%end%>
 <hr>

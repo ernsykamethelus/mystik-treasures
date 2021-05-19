@@ -1,19 +1,16 @@
 class CrystalController < ApplicationController
 
   get '/crystals' do 
-    user_not_logged_in
     @crystals = Crystal.all 
     erb :'/crystals/index'
   end
   
-  get '/crystals/new' do 
-    user_not_logged_in
+  get '/crystals/new' do
     @crystal = Crystal.new
     erb :"/crystals/new" 
   end
 
   post '/crystals' do 
-    user_not_logged_in
     @crystal = current_user.crystals.new(params[:crystal])
     if @crystal.save
     redirect "/crystals/#{@crystal.id}" 
@@ -23,20 +20,19 @@ class CrystalController < ApplicationController
 end
 
 get "/crystals/:id" do
-  user_not_logged_in
-  get_crystal
+  @crystal = Crystal.find_by_id(params[:id])
    erb :"/crystals/show"
 end
 
-get "/crystals/:id/edit" do
-  get_crystal
+get "/crystals/:id/edit" do #load edit form
   user_not_logged_in
+  get_crystal
   erb :"/crystals/edit"
 end
 
-patch "/crystals/:id" do
-  get_crystal
+patch "/crystals/:id" do #update the crystal
   user_not_logged_in
+  get_crystal
   if @crystal.update(params[:crystal])
     redirect "/crystals/#{@crystal.id}"
   else 
@@ -45,9 +41,8 @@ patch "/crystals/:id" do
 end
 
 delete "/crystals/:id/delete" do
-  get_crystal
-  not_able_to_edit
-  @crystal.destroy
+  @crystal = Crystal.find_by_id(params[:id])
+  @crystal.delete
   redirect "/users/#{session[:id]}"
 end
 

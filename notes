@@ -537,3 +537,24 @@ OR
 
 
 crystals/edit
+
+
+     <%if @user.crystals.length > 0 %>
+
+     crystal controller
+      user_not_logged_in
+  get_crystal
+
+    get_crystal
+  user_not_logged_in
+
+    get_crystal
+  user_not_logged_in
+
+  crystal delete -  
+  get_crystal
+  not_able_to_edit
+  @crystal.destroy
+
+  crystal new -
+    user_not_logged_in
