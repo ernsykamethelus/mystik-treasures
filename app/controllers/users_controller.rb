@@ -24,11 +24,6 @@ class UserController < ApplicationController
             erb :"/users/welcome"
         end
     end
-
-    get "/users" do
-        user_not_logged_in
-        erb :"/users/welcome"
-    end
 end
 
 

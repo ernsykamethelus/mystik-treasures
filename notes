@@ -527,3 +527,13 @@ OR
 #     redirect '/'
 # elsif @user.nil? && is_logged_in?
 #     redirect "/users/show"
+
+
+#     get "/users" do
+#         user_not_logged_in
+#         erb :"/users/welcome"
+#     end
+# end
+
+
+crystals/edit
