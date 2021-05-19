@@ -22,7 +22,6 @@ end
     erb :error
   end
 
-helpers do 
   def current_user 
     user = User.find_by_id(session[:id])
   end
@@ -37,4 +36,4 @@ helpers do
      end
   end
 end
-end
+

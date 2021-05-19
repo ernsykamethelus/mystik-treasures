@@ -5,10 +5,10 @@ class UserController < ApplicationController
     end
 
     post '/users' do
-        user = User.new(params[:user])
-        puts user
-        if user.save 
-            session[:id] = user.id
+        @user = User.new(params[:user])
+        puts @user
+        if @user.save 
+            session[:id] = @user.id
             redirect "/users/#{session[:id]}"
         else
             erb :'/error'
