@@ -1,19 +1,15 @@
 <div class="container">
 
   <div class="col-md-8 col-md-offset-2">
-    <h2>Welcome</h2>
-
-    <div class="content">
-      <p>Welcome back to the Mystik Misteries!</p>
-    </div>
+    <h2>Welcome back to the Mystik Misteries!</h2>
 
      <% if is_logged_in? && current_user.id.to_s == params[:id] %>
-    <h1>Hello <%= current_user.username %>! </h1>
-<%else%>
-    <h3> <b> Crystals added by <%= @user.username %>: </b> </h3>
-<%end%>
+     <h1>Hello <%= current_user.username %>! </h1>
+        <%else%>
+       <h3> <b> Crystals added by <%= @user.username %>: </b> </h3>
+     <%end%>
 
-<%if @user.crystals.length > 0 %>
+        <%if @user.crystals.length > 0 %>
 
     <% @user.crystals.each do |crystal| %>
     <p> <a href="/crystals/<%=crystal.id%>"><%= crystal.name%>:</a> </p>
@@ -27,7 +23,6 @@
             <input type="submit" value="Delete" />
         </form> -->
     <%end%>
-
     </p>  
     <%end%>
 

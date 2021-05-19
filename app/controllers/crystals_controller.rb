@@ -16,7 +16,7 @@ class CrystalController < ApplicationController
     user_not_logged_in
     @crystal = current_user.crystals.new(params[:crystal])
     if @crystal.save
-    redirect "/crystals" 
+    redirect "/crystals/#{@crystal.id}" 
   else
     erb :"/crystals/new"
   end
@@ -49,7 +49,7 @@ delete "/crystals/:id/delete" do
   get_crystal
   not_able_to_edit
   @crystal.destroy
-  redirect "/crystals"
+  redirect "/users/#{session[:id]}"
 end
 
 def get_crystal
@@ -59,9 +59,6 @@ def get_crystal
   end
 end
 
-# def choose_a_crystal
-#   @crystal = Crystal.find_by_id(params[:id])
-# end
 
 def not_able_to_edit
   user_not_logged_in
@@ -71,7 +68,6 @@ def not_able_to_edit
 end
 
 def authorize_crystal(crystal)
-  # true
   current_user == crystal.user
   end
 end
