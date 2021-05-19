@@ -21,13 +21,13 @@ class UserController < ApplicationController
         if @user.nil? 
             redirect '/'
         else
-            redirect "/users/show"
+            erb :"/users/welcome"
         end
     end
 
     get "/users" do
         user_not_logged_in
-        erb :"/users/show"
+        erb :"/users/welcome"
     end
 end
 

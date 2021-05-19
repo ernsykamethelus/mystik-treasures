@@ -14,7 +14,7 @@ class CrystalController < ApplicationController
 
   post '/crystals' do 
     user_not_logged_in
-    @crystal = current_user.crystals.new(name: params[:name],purpose: params[:purpose])
+    @crystal = current_user.crystals.new(params[:crystal])
     if @crystal.save
     redirect "/crystals" 
   else
@@ -38,7 +38,7 @@ end
 patch "/crystals/:id" do
   get_crystal
   user_not_logged_in
-  if @crystal.update(name: params[:name],purpose: params[:purpose])
+  if @crystal.update(params[:crystal])
     redirect "/crystals/#{@crystal.id}"
   else 
     erb :"/crystals/edit"
