@@ -27,6 +27,7 @@ end
 get "/crystals/:id/edit" do #load edit form
   user_not_logged_in
   get_crystal
+  # @crystal = Crystal.find_by_id(params[:id])
   erb :"/crystals/edit"
 end
 
@@ -34,13 +35,14 @@ patch "/crystals/:id" do #update the crystal
   user_not_logged_in
   get_crystal
   if @crystal.update(params[:crystal])
+    @crystal.save
     redirect "/crystals/#{@crystal.id}"
   else 
     erb :"/crystals/edit"
   end 
 end
 
-delete "/crystals/:id/delete" do
+delete "/crystals/:id/delete" do #delete action
   @crystal = Crystal.find_by_id(params[:id])
   @crystal.delete
   redirect "/users/#{session[:id]}"
